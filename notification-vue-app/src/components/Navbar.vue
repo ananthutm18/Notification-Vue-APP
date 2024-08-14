@@ -22,11 +22,11 @@
 
         const triggerNotification = () => {
             const bellIcon = document.querySelector('.bell-icon');
-            bellIcon.classList.add('shake');
+            bellIcon.classList.add('shake', 'glow');
 
             // Remove the shake class after the animation ends
             setTimeout(() => {
-                bellIcon.classList.remove('shake');
+                bellIcon.classList.remove('shake', 'glow');
             }, 500);
         };
 
@@ -122,6 +122,21 @@
 
     .bell-icon.shake {
         animation: shake 0.5s ease-in-out;
+    }
+
+
+    @keyframes glow {
+        0%, 100% {
+            box-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700, 0 0 20px #ffd700;
+        }
+
+        50% {
+            box-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ffd700;
+        }
+    }
+
+    .bell-icon.glow {
+        animation: glow 1.5s ease-in-out;
     }
 
 </style>
