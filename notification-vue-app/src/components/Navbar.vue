@@ -1,6 +1,14 @@
 <template>
     <nav class="navbar">
-        <div class="navbar-brand">MyApp</div>
+        <div class="navbar-brand">
+            <router-link to="/">
+                <img src="../assets/logoo.jpg" alt="MyApp Logo" class="logo-image" />
+            </router-link>
+        </div>        <div class="nav-links">
+            <router-link to="/" class="nav-link" active-class="active">Home</router-link>
+            <router-link to="/about" class="nav-link" active-class="active">About</router-link>
+            <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
+        </div>
         <notification-bell :unreadCount="notifications.length" :notifications="notifications" />
     </nav>
 </template>
@@ -24,7 +32,8 @@
             const bellIcon = document.querySelector('.bell-icon');
             bellIcon.classList.add('shake', 'glow');
 
-            // Remove the shake class after the animation ends
+
+
             setTimeout(() => {
                 bellIcon.classList.remove('shake', 'glow');
             }, 500);
@@ -67,8 +76,34 @@
     }
 
     .navbar-brand {
-        font-size: 24px;
-        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-image {
+        height: 40px;
+        width: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+        .nav-link:hover {
+            color: #ecf0f1;
+        }
+
+    .active {
+        border-bottom: 2px solid #ecf0f1;
     }
 
     .notification-bell {
@@ -138,5 +173,30 @@
     .bell-icon.glow {
         animation: glow 1.5s ease-in-out;
     }
+
+
+
+
+    .navbar-links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+        .navbar-links li {
+            list-style: none;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+            .navbar-links a:hover {
+                color: #ecf0f1;
+            }
+
 
 </style>

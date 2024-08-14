@@ -1,11 +1,11 @@
 <template>
     <div id="app">
         <Navbar />
+       
         <main>
-            <div class="container">
-                <h1>Welcome to Spartan World</h1>
-                <p>This is not the end.... Time will heal..Go on Buddyy.....</p>
-            </div>
+
+            <router-view></router-view>
+           
         </main>
     </div>
 </template>

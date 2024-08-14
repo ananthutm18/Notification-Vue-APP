@@ -1,7 +1,6 @@
 <template>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <div class="notification-bell" @click="toggleDropdown">
-        <!-- <span class="bell-icon">Bell</span>-->
 
 
         <span class="bell-icon">
@@ -10,14 +9,7 @@
 
         <span v-if="unreadCount > 0" class="notification-count">{{ unreadCount }}</span>
 
-        <!-- Dropdown for notifications -->
-        <!-- <div v-if="showDropdown" class="dropdown">
-            <div v-if="notifications.length === 0" class="dropdown-item">No notifications</div>
-            <div v-for="(notification, index) in notifications" :key="index" class="dropdown-item">
-                <strong>{{ notification.title }}</strong>: {{ notification.message }}
-            </div>
-        </div>-->
-        <!-- Dropdown for notifications -->
+      
         <div v-if="showDropdown" class="dropdown-container">
             <transition name="slide">
                 <div v-show="showDropdown" class="dropdown">
