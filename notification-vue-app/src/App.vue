@@ -3,8 +3,8 @@
         <Navbar />
         <main>
             <div class="container">
-                <h1>Welcome to MyApp</h1>
-                <p>This is the home page content.</p>
+                <h1>Welcome to Spartan World</h1>
+                <p>This is not the end.... Time will heal..Go on Buddyy.....</p>
             </div>
         </main>
     </div>
@@ -29,6 +29,10 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+
+    background: url("https://t4.ftcdn.net/jpg/05/61/09/11/360_F_561091177_27MfuJDQ3fW3Q2RIPiap9eE6IN5HMmef.jpg");
+    background-size: cover;
+
     }
 
     main {
@@ -37,7 +41,12 @@
     }
 
     .container {
-        max-width: 1200px;
+        max-width: 100%;
+
+    text-align: center;
+    color: white;
+
+  
         margin: 0 auto;
     }
 

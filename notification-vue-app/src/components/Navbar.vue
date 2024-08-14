@@ -20,9 +20,23 @@
                 notifications.value.push(notification);
             };
 
+        const triggerNotification = () => {
+            const bellIcon = document.querySelector('.bell-icon');
+            bellIcon.classList.add('shake');
+
+            // Remove the shake class after the animation ends
+            setTimeout(() => {
+                bellIcon.classList.remove('shake');
+            }, 500);
+        };
+
+
+
             onMounted(async () => {
                 SignalRService.onNewNotification((notification) => {
                     addNotification(notification);
+
+                triggerNotification();
                 });
 
                 try {
@@ -86,4 +100,28 @@
         min-width: 20px;
         text-align: center;
     }
+
+
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-5px);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
+
+        75% {
+            transform: translateX(-5px);
+        }
+    }
+
+    .bell-icon.shake {
+        animation: shake 0.5s ease-in-out;
+    }
+
 </style>
