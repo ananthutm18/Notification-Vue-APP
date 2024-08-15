@@ -1,6 +1,7 @@
 <template>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <div class="notification-bell" @click="toggleDropdown">
+        <!-- <span class="bell-icon">Bell</span>-->
 
 
         <span class="bell-icon">
@@ -9,7 +10,7 @@
 
         <span v-if="unreadCount > 0" class="notification-count">{{ unreadCount }}</span>
 
-      
+       
         <div v-if="showDropdown" class="dropdown-container">
             <transition name="slide">
                 <div v-show="showDropdown" class="dropdown">

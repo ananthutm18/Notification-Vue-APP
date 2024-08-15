@@ -28,16 +28,16 @@
                 notifications.value.push(notification);
             };
 
-        const triggerNotification = () => {
-            const bellIcon = document.querySelector('.bell-icon');
-            bellIcon.classList.add('shake', 'glow');
+            const triggerNotification = () => {
+                const bellIcon = document.querySelector('.bell-icon');
+                bellIcon.classList.add('shake', 'glow');
 
 
 
-            setTimeout(() => {
-                bellIcon.classList.remove('shake', 'glow');
-            }, 500);
-        };
+                setTimeout(() => {
+                    bellIcon.classList.remove('shake', 'glow');
+                }, 500);
+            };
 
 
 
@@ -45,7 +45,7 @@
                 SignalRService.onNewNotification((notification) => {
                     addNotification(notification);
 
-                triggerNotification();
+                    triggerNotification();
                 });
 
                 try {
@@ -63,7 +63,7 @@
 </script>
 
 
-<style >
+<style>
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -196,7 +196,7 @@
 
             .navbar-links a:hover {
                 color: #ecf0f1;
-            }
 
+            }
 
 </style>
