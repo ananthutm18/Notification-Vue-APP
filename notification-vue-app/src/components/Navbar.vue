@@ -9,7 +9,7 @@
             <router-link to="/about" class="nav-link" active-class="active">About</router-link>
             <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
         </div>
-        <notification-bell :unreadCount="notifications.length" :notifications="notifications" />
+                      <notification-bell :unreadCount="unreadCount" :notifications="notifications" @clear-unread-count="clearUnreadCount" />
     </nav>
 </template>
 
@@ -23,9 +23,12 @@
         },
         setup() {
             const notifications = ref([]);
+        const unreadCount = ref(0);
 
             const addNotification = (notification) => {
                 notifications.value.push(notification);
+                unreadCount.value += 1; // Increment unread count
+            console.log(unreadCount,"heloooooooooooooo")
             };
 
             const triggerNotification = () => {
@@ -38,6 +41,12 @@
                     bellIcon.classList.remove('shake', 'glow');
                 }, 500);
             };
+
+
+        const clearUnreadCount = () => {
+            unreadCount.value = 0; // Reset unread count
+        };
+       
 
 
 
@@ -56,7 +65,9 @@
             });
 
             return {
-                notifications
+                notifications,
+                unreadCount,
+            clearUnreadCount
             };
         }
     };

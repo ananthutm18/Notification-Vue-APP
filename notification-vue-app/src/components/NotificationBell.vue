@@ -38,7 +38,9 @@
                 type: Array,
                 default: () => [],
             },
-        },
+    },
+
+       emits: ['clear-unread-count'], // Declare emitted events
 
         data() {
             return {
@@ -49,6 +51,9 @@
             toggleDropdown() {
                 console.log("hello");
                 this.showDropdown = !this.showDropdown;
+
+
+            this.$emit('clear-unread-count');
             }
         }
         }
