@@ -22,7 +22,7 @@ class SignalRService {
         if (this.connection.state === signalR.HubConnectionState.Disconnected) {
             try {
                 await this.connection.start();
-                console.log("SignalR Connected.");
+                console.log("SignalR Connected. from signal service ");
             } catch (err) {
                 console.error("SignalR Connection Error: ", err);
                 setTimeout(() => this.start(), 5000);

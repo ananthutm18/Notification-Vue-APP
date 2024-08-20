@@ -61,11 +61,11 @@
                     triggerNotification();
                 });
 
-                try {
-                    await SignalRService.start();
-                } catch (error) {
-                    console.error('SignalR connection error:', error);
-                }
+                // try {
+                //     await SignalRService.start();
+                // } catch (error) {
+                //     console.error('SignalR connection error:', error);
+                // }
             });
 
             return {

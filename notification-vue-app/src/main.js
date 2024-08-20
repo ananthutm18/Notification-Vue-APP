@@ -8,7 +8,8 @@ import App from './App.vue'
 
 
 signalRService.start().then(() => {
-    signalRService.onNewNotification()
+    //  signalRService.onNewNotification()
+    console.log("SignalR is connected")
    
 });
 
