@@ -5,14 +5,16 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 
+
+
 signalRService.start().then(() => {
-    signalRService.onNewNotification((notification) => {
-        app.config.globalProperties.$root.$emit('new-notification', notification);
-    });
+    signalRService.onNewNotification()
+   
 });
 
-const app = createApp(App);
-app.use(router); // Use the router
-app.mount('#app');
 
-//createApp(App).mount('#app')
+
+const app = createApp(App);
+app.use(router); 
+
+app.mount('#app');

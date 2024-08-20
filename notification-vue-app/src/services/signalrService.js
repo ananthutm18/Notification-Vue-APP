@@ -3,8 +3,8 @@ import * as signalR from "@microsoft/signalr";
 class SignalRService {
     constructor() {
         this.connection = new signalR.HubConnectionBuilder()
-       // .withUrl("http://localhost:81/notificationHub", {
-            .withUrl("https://notificationapp-g8hcc0fccvfffxdx.eastus-01.azurewebsites.net/notificationHub", {
+       .withUrl("http://localhost:5076/notificationHub", {
+           // .withUrl("https://notificationapp-g8hcc0fccvfffxdx.eastus-01.azurewebsites.net/notificationHub", {
                 
                 skipNegotiation: true,
                 transport: signalR.HttpTransportType.WebSockets

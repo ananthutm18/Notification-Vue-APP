@@ -8,8 +8,12 @@
             <router-link to="/" class="nav-link" active-class="active">Home</router-link>
             <router-link to="/about" class="nav-link" active-class="active">About</router-link>
             <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
+            <router-link to="/register" class="nav-link" active-class="active">Register</router-link>
+            <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
+
+
         </div>
-                      <notification-bell :unreadCount="unreadCount" :notifications="notifications" @clear-unread-count="clearUnreadCount" />
+        <notification-bell :unreadCount="unreadCount" :notifications="notifications" @clear-unread-count="clearUnreadCount" />
     </nav>
 </template>
 
@@ -23,12 +27,12 @@
         },
         setup() {
             const notifications = ref([]);
-        const unreadCount = ref(0);
+            const unreadCount = ref(0);
 
             const addNotification = (notification) => {
                 notifications.value.push(notification);
                 unreadCount.value += 1; // Increment unread count
-            console.log(unreadCount,"heloooooooooooooo")
+                console.log(unreadCount, "heloooooooooooooo")
             };
 
             const triggerNotification = () => {
@@ -43,10 +47,10 @@
             };
 
 
-        const clearUnreadCount = () => {
-            unreadCount.value = 0; // Reset unread count
-        };
-       
+            const clearUnreadCount = () => {
+                unreadCount.value = 0; // Reset unread count
+            };
+
 
 
 
@@ -67,7 +71,7 @@
             return {
                 notifications,
                 unreadCount,
-            clearUnreadCount
+                clearUnreadCount
             };
         }
     };
