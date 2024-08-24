@@ -8,8 +8,8 @@
             <router-link to="/" class="nav-link" active-class="active">Home</router-link>
             <router-link to="/about" class="nav-link" active-class="active">About</router-link>
             <router-link to="/contact" class="nav-link" active-class="active">Contact</router-link>
-            <router-link to="/register" class="nav-link" active-class="active">Register</router-link>
-            <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
+             <!---<router-link to="/register" class="nav-link" active-class="active">Register</router-link>
+             <router-link to="/login" class="nav-link" active-class="active">Login</router-link> -->
 
 
         </div>
